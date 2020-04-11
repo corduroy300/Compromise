@@ -9,13 +9,24 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    var people: [Person] = [Person(), Person(), Person(bills: [10, 0, 0, 0, 0, 0, 5])]
+    @EnvironmentObject var settings: UserSettings
+    
     var body: some View {
-        Text("Hello, World!")
+
+        VStack {
+            SelectRow()
+            List(settings.people) { person in
+                PersonRow(person: person)
+            }
+        }
+        
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().environmentObject(UserSettings())
     }
 }
