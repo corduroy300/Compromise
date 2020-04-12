@@ -12,7 +12,6 @@ class UserSettings: ObservableObject{
     @Published var numberOfPeople = 0
     @Published var totalAmount: Int = 0
     @Published var people: [Person] = []
-    
 }
 
 func CreatePeopleArray(numberOfPeople: Int) -> [Person] {
@@ -24,8 +23,6 @@ func CreatePeopleArray(numberOfPeople: Int) -> [Person] {
 }
 
 struct SelectRow: View {
-    
-    var strengths = ["Mild", "Medium", "Mature"]
     
     @EnvironmentObject var settings: UserSettings
     @State var numberOfPeople = 2

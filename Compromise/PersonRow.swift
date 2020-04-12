@@ -9,7 +9,7 @@
 import SwiftUI
 
 func CalculateBills(amount: Int) -> [[Int]] {
-    let possibleBills = [[1, 2, 5, 10, 20, 50, 100], [1, 2, 5, 10, 20, 50, 100]]
+    let possibleBills = [[0, 2, 5, 10, 20, 50, 100], [1, 2, 5, 10, 20, 50, 100]]
     return possibleBills
 }
 
@@ -47,15 +47,9 @@ struct PersonRow: View {
             
             Button(action: {
                 print("SwiftUI: Button tapped")
-                //var possibleBills = CalculateBills(amount: self.person.amount)
             }) {
                 Text("Calculate Bills")
             }
-//            Picker(selection: $selectedBills, label: Text("Bills")) {
-//                ForEach(0 ..< possibleBills.count) {index in
-//                   Text("\(possibleBills[index])")
-//                }
-//            }
         }
     }
 }
